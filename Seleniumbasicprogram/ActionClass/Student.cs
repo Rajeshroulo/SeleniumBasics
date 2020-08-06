@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Seleniumbasicprogram.ActionClass
@@ -13,19 +14,17 @@ namespace Seleniumbasicprogram.ActionClass
   public class Student
   {
       [Test]
-      public void ActionsMoveToElement()
+      public void MoveToElement()
         {
             IWebDriver driver = new ChromeDriver();
             driver.Url = "http://uitestpractice.com/Students/Actions";
             driver.Manage().Window.Maximize();
             Actions actions = new Actions(driver);
-           // actions.MoveToElement(driver.FindElement(By.Id("div2")))
-            //  actions.MoveToElement(driver.FindElement(By.Id("div2")),20,20)
-              actions.MoveToElement(driver.FindElement(By.Id("div2")),20,20,MoveToElementOffsetOrigin.Center)
-                .ContextClick()
+            actions.DragAndDrop(driver.FindElement(By.Id("draggable")), driver.FindElement(By.Id("droppable")))
                 .Build()
                 .Perform();
 
+            Thread.Sleep(3000);
             driver.Quit();
 
         }
