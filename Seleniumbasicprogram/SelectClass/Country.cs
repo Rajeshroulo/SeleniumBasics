@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 namespace Seleniumbasicprogram.SelectClass
 {
    public class Country
-    {
+   {
        IWebDriver driver;
 
         [Test]
@@ -31,11 +31,23 @@ namespace Seleniumbasicprogram.SelectClass
                   Console.WriteLine(item.Text);
               }
 
-           
+            bool isMultiple = element.IsMultiple;
+            Console.WriteLine(isMultiple);
+
+            element.SelectByText("India");
+
+            Thread.Sleep(2000);
+
+            element.SelectByIndex(1);
+            Thread.Sleep(2000);
+
+            element.DeselectAll();
+            Thread.Sleep(2000);
+
 
             driver.Quit();
         }
 
 
-    }
+   }
 }
