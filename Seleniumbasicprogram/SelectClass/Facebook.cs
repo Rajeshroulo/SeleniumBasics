@@ -34,8 +34,6 @@ namespace Seleniumbasicprogram.SelectClass
             element.SelectByText("Aug");
             Thread.Sleep(3000);
             element.SelectByIndex(3);
-            Thread.Sleep(2000);
-            element.DeselectByIndex(3);
 
         }
 

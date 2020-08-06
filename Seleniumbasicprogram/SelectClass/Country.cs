@@ -44,7 +44,6 @@ namespace Seleniumbasicprogram.SelectClass
             element.DeselectAll();
             Thread.Sleep(2000);
 
-
             driver.Quit();
         }
 
