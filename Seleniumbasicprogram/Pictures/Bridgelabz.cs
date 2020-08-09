@@ -13,13 +13,15 @@ namespace Seleniumbasicprogram.Pictures
   {
       [Test]
       public void Screenshot()
-        {
+      {
             IWebDriver driver = new ChromeDriver();
             driver.Url = "https://www.bridgelabz.com/";
-            ((ITakesScreenshot)driver).GetScreenshot().SaveAsFile("Bridgelabz.png", ScreenshotImageFormat.Png);
+            driver.Manage().Window.Maximize();
+            ((ITakesScreenshot)driver).GetScreenshot().SaveAsFile("Bridgelab.jpeg", ScreenshotImageFormat.Jpeg);
             driver.Quit();
-        }
+      }
 
+     
 
   }
 }

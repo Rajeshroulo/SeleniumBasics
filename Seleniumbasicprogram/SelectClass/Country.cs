@@ -4,16 +4,12 @@ using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 
 namespace Seleniumbasicprogram.SelectClass
 {
-   public class Country
+    public class Country
    {
-       IWebDriver driver;
+      public IWebDriver driver;
 
         [Test]
         public void MultiselectDropdown()
@@ -31,8 +27,8 @@ namespace Seleniumbasicprogram.SelectClass
                   Console.WriteLine(item.Text);
               }
 
-            bool isMultiple = element.IsMultiple;
-            Console.WriteLine(isMultiple);
+         /*   bool isMultiple = element.IsMultiple;
+            Console.WriteLine(isMultiple); 
 
             element.SelectByText("India");
 
@@ -42,7 +38,7 @@ namespace Seleniumbasicprogram.SelectClass
             Thread.Sleep(2000);
 
             element.DeselectAll();
-            Thread.Sleep(2000);
+            Thread.Sleep(2000); */
 
             driver.Quit();
         }

@@ -2,20 +2,15 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Interactions;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace Seleniumbasicprogram.ActionClass
 {
-  public class Student
-  {
+    public class Student
+    {
       [Test]
-      public void MoveToElement()
-        {
+      public void DragandDrop()
+      {
             IWebDriver driver = new ChromeDriver();
             driver.Url = "http://uitestpractice.com/Students/Actions";
             driver.Manage().Window.Maximize();
@@ -27,7 +22,7 @@ namespace Seleniumbasicprogram.ActionClass
             Thread.Sleep(3000);
             driver.Quit();
 
-        }
+      }
 
 
     }
