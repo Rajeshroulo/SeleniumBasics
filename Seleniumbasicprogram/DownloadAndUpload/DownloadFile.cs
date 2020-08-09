@@ -8,6 +8,7 @@ using System.Data.SqlTypes;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Seleniumbasicprogram.DownloadAndUpload
@@ -52,5 +53,17 @@ namespace Seleniumbasicprogram.DownloadAndUpload
         }
 
 
+        [Test]
+        public void VerifyUpload()
+        {
+            IWebDriver driver = new ChromeDriver();
+            driver.Manage().Window.Maximize();
+            driver.Url = "http://uitestpractice.com/Students/Widgets";
+            driver.FindElement(By.Id("image_file")).SendKeys(@"C:\Users\HP\Downloads\Honeywell.jpg");
+            driver.FindElement(By.XPath("//input[@type = 'button']")).Click();
+
+            Thread.Sleep(5000);
+            driver.Quit();
+        }
     }
 }
