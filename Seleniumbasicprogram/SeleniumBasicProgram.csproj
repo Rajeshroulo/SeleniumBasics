@@ -90,6 +90,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ActionClass\Student.cs" />
+    <Compile Include="DownloadAndUpload\DownloadFile.cs" />
     <Compile Include="ExtentReports\FacebookReports.cs" />
     <Compile Include="Pictures\Bridgelabz.cs" />
     <Compile Include="Program.cs" />
