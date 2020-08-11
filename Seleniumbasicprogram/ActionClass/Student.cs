@@ -41,7 +41,7 @@ namespace Seleniumbasicprogram.ActionClass
         [Test,Order(3)]
         public void ActionClick()
         {
-            //actions.Click(driver.FindElement(By.Name("click")))
+           // actions.Click(driver.FindElement(By.Name("click")))
             actions.MoveToElement(driver.FindElement(By.Name("click")))
             .Click()
             .Build()
@@ -51,11 +51,24 @@ namespace Seleniumbasicprogram.ActionClass
         [Test,Order(4)]
         public void ActionDoubleClick()
         {
-            actions.DoubleClick(driver.FindElement(By.Name("dblClick")))
-            //actions.MoveToElement(driver.FindElement(By.Name("dblClick")))
-           // .DoubleClick()
+            //actions.DoubleClick(driver.FindElement(By.Name("dblClick")))
+            actions.MoveToElement(driver.FindElement(By.Name("dblClick")))
+            .DoubleClick()
             .Build()
             .Perform();
+        }
+
+        [Test,Order(5)]
+        public void ActionClickAndHold()
+        {
+          // actions.ClickAndHold(driver.FindElement(By.Name("one")))
+           // .Release(driver.FindElement(By.Name("twelve")))
+            actions.MoveToElement(driver.FindElement(By.Name("one")))
+            .ClickAndHold()
+            .Release()
+            .Build()
+            .Perform();
+            Thread.Sleep(2000);
         }
 
         [TearDown]
