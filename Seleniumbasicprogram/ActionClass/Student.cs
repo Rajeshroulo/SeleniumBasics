@@ -8,22 +8,51 @@ namespace Seleniumbasicprogram.ActionClass
 {
     public class Student
     {
-      [Test]
-      public void DragandDrop()
-      {
-            IWebDriver driver = new ChromeDriver();
+        public IWebDriver driver;
+        public Actions actions;
+        [SetUp]
+        public void InitializeBrowser()
+        {
+            driver = new ChromeDriver();
             driver.Url = "http://uitestpractice.com/Students/Actions";
             driver.Manage().Window.Maximize();
-            Actions actions = new Actions(driver);
-            actions.DragAndDrop(driver.FindElement(By.Id("draggable")), driver.FindElement(By.Id("droppable")))
+            actions = new Actions(driver);
+
+
+        }
+
+        [Test,Order(1)]
+        public void MoveElement()
+        {
+            actions.MoveToElement(driver.FindElement(By.Id("div2")), 20, 20, MoveToElementOffsetOrigin.Center)
+                .ContextClick()
                 .Build()
-                .Perform();
+                .Perform();           
+        }
 
-            Thread.Sleep(3000);
+        [Test,Order(2)]
+        public void DragandDrop()
+        {
+            actions.DragAndDrop(driver.FindElement(By.Id("draggable")), driver.FindElement(By.Id("droppable")))
+            .Build()
+            .Perform();
+        }
+
+        [Test,Order(3)]
+        public void ActionClick()
+        {
+            actions.Click(driver.FindElement(By.Name("click")))
+           // actions.MoveToElement(driver.FindElement(By.Name("click")))
+           // .Click()
+            .Build()
+            .Perform();
+        }
+
+        [TearDown]
+        public void CloseBrowser()
+        {
             driver.Quit();
-
-      }
-
+        }
 
     }
 }

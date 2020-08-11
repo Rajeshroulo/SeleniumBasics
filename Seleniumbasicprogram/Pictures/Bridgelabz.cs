@@ -3,17 +3,13 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Seleniumbasicprogram.Pictures
 {
-  public class Bridgelabz
-  {
+    public class Bridgelabz
+    {  
 
-        public IWebDriver driver;  
+      public IWebDriver driver;  
       [Test,Author("Rajesh","rajraval017@gmail.com")]
       [Description("Take screenshot")]
       public void Screenshot()
@@ -28,7 +24,8 @@ namespace Seleniumbasicprogram.Pictures
       [Test, Author("Rajesh", "rajraval017@gmail.com")]
       [TestCaseSource("Datalinks")]
       public void SourceTest(String url)
-        {
+      {
+
             try
             {
                 driver = new ChromeDriver();
@@ -48,7 +45,7 @@ namespace Seleniumbasicprogram.Pictures
                 throw;
             }
 
-        }
+      }
 
         static IList Datalinks()
         {

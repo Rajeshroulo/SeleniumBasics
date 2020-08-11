@@ -92,6 +92,7 @@
     <Compile Include="ActionClass\Student.cs" />
     <Compile Include="DownloadAndUpload\DownloadFile.cs" />
     <Compile Include="ExtentReports\FacebookReports.cs" />
+    <Compile Include="News\YcombinatorNews.cs" />
     <Compile Include="Pictures\Bridgelabz.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -15,19 +15,27 @@ namespace Seleniumbasicprogram.DownloadAndUpload
 {
    public class DownloadFile
    {
-        
+       public static IWebDriver driver;
+       public static ChromeOptions options;
+
+        [SetUp]
+        public void InitializeBrowser()
+        {
+            options = new ChromeOptions();
+            driver = new ChromeDriver(options);
+            options.AddArguments("start-maximized");
+            driver.Url = "http://uitestpractice.com/Students/Widgets";
+
+        }
+
         [Test]
         public static void VerifyDownload()
         {
             String expectedFilePath = @"C:\Users\HP\Downloads\images.png";
             bool fileExists = false;
 
-            ChromeOptions options = new ChromeOptions();
             options.AddUserProfilePreference("download.default_directory", @"C:\Users\HP\Downloads\images.png");
 
-            IWebDriver driver = new ChromeDriver(options);
-            driver.Manage().Window.Maximize();
-            driver.Url = "http://uitestpractice.com/Students/Widgets";
             driver.FindElement(By.XPath("//button/a")).Click();
             try
             {
@@ -49,21 +57,31 @@ namespace Seleniumbasicprogram.DownloadAndUpload
                     File.Delete(expectedFilePath);
             }
 
-            driver.Quit();
         }
 
 
         [Test]
         public void VerifyUpload()
         {
-            IWebDriver driver = new ChromeDriver();
-            driver.Manage().Window.Maximize();
-            driver.Url = "http://uitestpractice.com/Students/Widgets";
-            driver.FindElement(By.Id("image_file")).SendKeys(@"C:\Users\HP\Downloads\Honeywell.jpg");
+             driver.FindElement(By.Id("image_file")).SendKeys(@"C:\Users\HP\Downloads\Honeywell.jpg");
             driver.FindElement(By.XPath("//input[@type = 'button']")).Click();
 
             Thread.Sleep(5000);
-            driver.Quit();
         }
-    }
+
+        [Test]
+        public void DateFormat()
+        {
+            DateTime now = DateTime.Today;
+            Console.WriteLine(now);
+
+        }
+
+        [TearDown]
+        public void CloseBrowser()
+        {
+            driver.Quit();
+
+        }
+   }
 }
