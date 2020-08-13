@@ -51,6 +51,22 @@ namespace Seleniumbasicprogram.AlertsAndwindows
             driver.FindElement(By.Id("name")).SendKeys("Raj");
             driver.SwitchTo().DefaultContent();
             Thread.Sleep(2000);
+        }
+
+        [Test,Order(4)]
+        public void MultipleWindows()
+        {
+            driver.FindElement(By.LinkText("Opens in a new window")).Click();
+            Console.WriteLine("Number of windows opened" + driver.WindowHandles.Count);
+
+            foreach(var windows in driver.WindowHandles)
+            {
+                Console.WriteLine(windows);
+            }
+
+            driver.SwitchTo().Window(driver.WindowHandles[0]);
+            Console.WriteLine("Current window handle is" + driver.CurrentWindowHandle);
+            Thread.Sleep(2000);
 
         }
 
@@ -60,6 +76,5 @@ namespace Seleniumbasicprogram.AlertsAndwindows
             driver.Quit();
         }
 
-
-    }
+   }
 }
