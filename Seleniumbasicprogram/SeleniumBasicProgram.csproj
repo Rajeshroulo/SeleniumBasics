@@ -93,6 +93,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ActionClass\Student.cs" />
+    <Compile Include="AlertsAndwindows\SimpleAlerts.cs" />
     <Compile Include="DownloadAndUpload\DownloadFile.cs" />
     <Compile Include="Reports\YoutubeReports.cs" />
     <Compile Include="Reports\FacebookReports.cs" />

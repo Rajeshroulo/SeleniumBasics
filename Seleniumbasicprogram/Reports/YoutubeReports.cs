@@ -10,7 +10,7 @@ using System.Threading;
 namespace Seleniumbasicprogram.Reports
 {
     public class YoutubeReports
-   {
+    {
        public IWebDriver driver;
 
         ILog logger = LogManager.GetLogger(typeof(Program));
@@ -41,5 +41,5 @@ namespace Seleniumbasicprogram.Reports
             logger.Info("Exit the browser");
         }
 
-   }
+    }
 }

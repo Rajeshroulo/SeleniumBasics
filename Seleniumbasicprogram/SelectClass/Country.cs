@@ -60,7 +60,6 @@ namespace Seleniumbasicprogram.SelectClass
             element.DeselectAll();
             Thread.Sleep(2000);
 
-
         }
 
         [TearDown]
@@ -69,7 +68,6 @@ namespace Seleniumbasicprogram.SelectClass
             driver.Quit();
 
         }
-
 
     }
 }
