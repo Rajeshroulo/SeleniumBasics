@@ -27,8 +27,19 @@ namespace Seleniumbasicprogram.AlertsAndwindows
         public void SimpleAlert()
         {
             driver.FindElement(By.Id("alert")).Click();
-           string text = driver.SwitchTo().Alert().Text;
+            string text = driver.SwitchTo().Alert().Text;
             Console.WriteLine(text);
+            driver.SwitchTo().Alert().Accept();
+            Thread.Sleep(2000);
+        }
+
+        [Test]
+        public void PropmtAlert()
+        {
+            driver.FindElement(By.Id("prompt")).Click();
+            Thread.Sleep(2000);
+            driver.SwitchTo().Alert().SendKeys("Rajesh");
+            Thread.Sleep(2000);
             driver.SwitchTo().Alert().Accept();
             Thread.Sleep(2000);
         }
