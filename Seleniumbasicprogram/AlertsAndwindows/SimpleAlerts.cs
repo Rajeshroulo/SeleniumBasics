@@ -14,7 +14,7 @@ namespace Seleniumbasicprogram.AlertsAndwindows
    {
         public IWebDriver driver;
 
-        [SetUp]
+        [OneTimeSetUp]
         public void InitializeBrowser()
         {
             driver = new ChromeDriver();
@@ -23,7 +23,7 @@ namespace Seleniumbasicprogram.AlertsAndwindows
         }
 
 
-        [Test]
+        [Test,Order(1)]
         public void SimpleAlert()
         {
             driver.FindElement(By.Id("alert")).Click();
@@ -33,7 +33,7 @@ namespace Seleniumbasicprogram.AlertsAndwindows
             Thread.Sleep(2000);
         }
 
-        [Test]
+        [Test,Order(2)]
         public void PropmtAlert()
         {
             driver.FindElement(By.Id("prompt")).Click();
@@ -44,7 +44,17 @@ namespace Seleniumbasicprogram.AlertsAndwindows
             Thread.Sleep(2000);
         }
 
-        [TearDown]
+        [Test,Order(3)]
+        public void SwitchFrames()
+        {
+            driver.SwitchTo().Frame("iframe_a");
+            driver.FindElement(By.Id("name")).SendKeys("Raj");
+            driver.SwitchTo().DefaultContent();
+            Thread.Sleep(2000);
+
+        }
+
+        [OneTimeTearDown]
         public void CloseBrowser()
         {
             driver.Quit();
