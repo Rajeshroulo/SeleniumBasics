@@ -1,0 +1,6 @@
+﻿2020-08-13 09:44:46,148 INFO [NonParallelWorker] Seleniumbasicprogram.Reports.YoutubeReports.Initialize - Enter into the youtube 
+2020-08-13 09:44:47,371 INFO [NonParallelWorker] Seleniumbasicprogram.Reports.YoutubeReports.CloseBrowser - Exit the browser
+2020-08-13 09:48:44,298 INFO [NonParallelWorker] Seleniumbasicprogram.Reports.YoutubeReports.Initialize - Enter into the youtube 
+2020-08-13 09:48:44,633 INFO [NonParallelWorker] Seleniumbasicprogram.Reports.YoutubeReports.ContactSearch - Entering text in search box
+2020-08-13 09:48:47,897 INFO [NonParallelWorker] Seleniumbasicprogram.Reports.YoutubeReports.ContactSearch - Clicking on serach option
+2020-08-13 09:48:51,354 INFO [NonParallelWorker] Seleniumbasicprogram.Reports.YoutubeReports.CloseBrowser - Exit the browser

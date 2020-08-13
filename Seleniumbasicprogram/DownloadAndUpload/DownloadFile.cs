@@ -3,18 +3,13 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
 using System;
-using System.Collections.Generic;
-using System.Data.SqlTypes;
 using System.IO;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace Seleniumbasicprogram.DownloadAndUpload
 {
-   public class DownloadFile
-   {
+    public class DownloadFile
+    {
        public static IWebDriver driver;
        public static ChromeOptions options;
 
@@ -59,7 +54,6 @@ namespace Seleniumbasicprogram.DownloadAndUpload
 
         }
 
-
         [Test]
         public void VerifyUpload()
         {
@@ -81,7 +75,6 @@ namespace Seleniumbasicprogram.DownloadAndUpload
         public void CloseBrowser()
         {
             driver.Quit();
-
         }
-   }
+    }
 }

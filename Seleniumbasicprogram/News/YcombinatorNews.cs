@@ -1,19 +1,12 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Policy;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace Seleniumbasicprogram.News
 {
-   public class YcombinatorNews
-   {
+    public class YcombinatorNews
+    {
         public IWebDriver driver;
 
         [SetUp]
@@ -44,5 +37,5 @@ namespace Seleniumbasicprogram.News
         {
             driver.Quit();
         }
-    }
+    } 
 }
