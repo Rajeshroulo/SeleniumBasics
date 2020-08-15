@@ -7,18 +7,16 @@ using System.Collections;
 namespace Seleniumbasicprogram.Pictures
 {
    public class Bridgelabz
-   {   
-      [SetUp]      
+   {
+       public IWebDriver driver;
+       [SetUp]      
       public void InitializeBrowser()
       {
             driver = new ChromeDriver();
             driver.Manage().Window.Maximize();
 
       }
-
       
-
-        public IWebDriver driver;
         
       [Test,Author("Rajesh","rajraval017@gmail.com")]
       [Description("Take screenshot")]
