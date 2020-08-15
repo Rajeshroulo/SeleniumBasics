@@ -63,13 +63,7 @@ namespace Seleniumbasicprogram.DownloadAndUpload
             Thread.Sleep(5000);
         }
 
-        [Test]
-        public void DateFormat()
-        {
-            DateTime now = DateTime.Today;
-            Console.WriteLine(now);
-
-        }
+        
 
         [TearDown]
         public void CloseBrowser()

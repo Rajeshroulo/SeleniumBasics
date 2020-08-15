@@ -1,41 +1,70 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 
 namespace Seleniumbasicprogram.News
 {
-    public class YcombinatorNews
+    public class YcombinatorNews : NewsSite
     {
-        public IWebDriver driver;
+        Dictionary<int, string> dict = new Dictionary<int, string>();
+        List<string> headings = new List<string>();
+        List<int> score = new List<int>();
 
-        [SetUp]
-        public void Initialize()
+        [Test]    
+        public void PointsAndnews()
         {
-            driver = new ChromeDriver();
-            driver.Manage().Window.Maximize();
-            driver.Navigate().GoToUrl("https://news.ycombinator.com");
+            try
+            {
+                IList<IWebElement> news = driver.FindElements(By.ClassName("storylink"));
 
+                IList<IWebElement> points = driver.FindElements(By.ClassName("score"));
+
+                for (int i = 0; i < points.Count; i++)
+                {
+                    string value = points[i].Text;
+                    string onlyvalue = value.Replace("points", "");
+                    score.Add(int.Parse(onlyvalue));
+                    Console.WriteLine(onlyvalue);
+
+                    string text = news[i].Text;
+                    headings.Add(text);
+                    Console.WriteLine(text);
+                }
+
+
+                for (int i = 0; i < score.Count; i++)
+                {
+                    if (!dict.ContainsKey(score[i]))
+                    {
+                        dict.Add(score[i], headings[i]);
+                    }
+                }
+
+                foreach (KeyValuePair<int, string> keyValue in dict)
+                {
+                    Console.WriteLine(keyValue);
+                }
+
+                var word = headings.SelectMany(r => r.Split(new[] { " " },
+                                                     StringSplitOptions.RemoveEmptyEntries))
+                                     .GroupBy(r => r).OrderByDescending(r => r.Count())
+                                     .Select(r => r.Key).FirstOrDefault();
+                Console.WriteLine("most repeated word is =   " + word);
+
+                var highestPointsNews = dict.OrderBy(r => r.Key).Last();
+                Console.WriteLine("News with highest points =   " + highestPointsNews);
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e.ToString());
+            }
+        
         }
 
-        [Test]
-        public void NewsHeading()
-        {
-            driver.FindElement(By.ClassName("morelink")).Click();
-            Thread.Sleep(2000);
-            driver.FindElement(By.ClassName("morelink")).Click();
-            Thread.Sleep(2000);
-            driver.FindElement(By.ClassName("morelink")).Click();
-            Thread.Sleep(2000);
-            driver.FindElement(By.LinkText("Water beetles that survive being swallowed by frogs")).Click();
-            Thread.Sleep(2000);
-
-        }
-
-        [TearDown]
-        public void CloseBrowser()
-        {
-            driver.Quit();
-        }
+       
     } 
 }

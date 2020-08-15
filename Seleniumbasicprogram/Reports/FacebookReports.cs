@@ -18,11 +18,7 @@ namespace Seleniumbasicprogram
            extent.AttachReporter(htmlReporter);
         }
 
-        [OneTimeTearDown]
-        public void ExtentClose()
-        {
-            extent.Flush();
-        }
+        
 
         [Test]
         public void Facebookid()
@@ -50,6 +46,12 @@ namespace Seleniumbasicprogram
             }
 
         }
-        
+
+        [OneTimeTearDown]
+        public void ExtentClose()
+        {
+            extent.Flush();
+        }
+
     }
 }
