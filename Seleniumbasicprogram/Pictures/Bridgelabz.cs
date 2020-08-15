@@ -16,11 +16,7 @@ namespace Seleniumbasicprogram.Pictures
 
       }
 
-      [TearDown]
-      public void closeBrowser()
-      {
-            driver.Quit();
-      }
+      
 
         public IWebDriver driver;
         
@@ -61,7 +57,13 @@ namespace Seleniumbasicprogram.Pictures
             list.Add("https://www.facebook.com");
             return list;
 
-       } 
+       }
 
-   }
+       [TearDown]
+       public void closeBrowser()
+       {
+            driver.Quit();
+       }
+
+    }
 }
