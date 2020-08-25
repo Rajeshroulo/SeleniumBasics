@@ -16,7 +16,6 @@ namespace Seleniumbasicprogram.SelectClass
             driver = new ChromeDriver();
             driver.Navigate().GoToUrl("http://facebook.com");
             driver.Manage().Window.Maximize();
-
         }
 
         [Test]
@@ -29,14 +28,12 @@ namespace Seleniumbasicprogram.SelectClass
             element.SelectByText("Aug");
             Thread.Sleep(3000);
             element.SelectByIndex(3);
-
         }
 
         [TearDown]
         public void CloseBrowser()
         {
             driver.Quit();
-        }
-        
+        }        
     }
 }

@@ -2,16 +2,12 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace Seleniumbasicprogram.AlertsAndwindows
 {
-   public class SimpleAlerts
-   {
+    public class SimpleAlerts
+    {
         public IWebDriver driver;
 
         [OneTimeSetUp]
@@ -21,7 +17,6 @@ namespace Seleniumbasicprogram.AlertsAndwindows
             driver.Manage().Window.Maximize();
             driver.Url = "http://uitestpractice.com/Students/Switchto";
         }
-
 
         [Test,Order(1)]
         public void SimpleAlert()
@@ -58,16 +53,13 @@ namespace Seleniumbasicprogram.AlertsAndwindows
         {
             driver.FindElement(By.LinkText("Opens in a new window")).Click();
             Console.WriteLine("Number of windows opened" + driver.WindowHandles.Count);
-
             foreach(var windows in driver.WindowHandles)
             {
                 Console.WriteLine(windows);
             }
-
             driver.SwitchTo().Window(driver.WindowHandles[0]);
             Console.WriteLine("Current window handle is" + driver.CurrentWindowHandle);
             Thread.Sleep(2000);
-
         }
 
         [OneTimeTearDown]
@@ -75,6 +67,5 @@ namespace Seleniumbasicprogram.AlertsAndwindows
         {
             driver.Quit();
         }
-
-   }
+    }
 }

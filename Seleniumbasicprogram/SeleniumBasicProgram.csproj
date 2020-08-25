@@ -94,13 +94,16 @@
   <ItemGroup>
     <Compile Include="ActionClass\Student.cs" />
     <Compile Include="AlertsAndwindows\SimpleAlerts.cs" />
+    <Compile Include="Browsers\Browser.cs" />
+    <Compile Include="Browsers\BrowserTest.cs" />
+    <Compile Include="Browsers\Drivers.cs" />
     <Compile Include="DownloadAndUpload\DownloadFile.cs" />
-    <Compile Include="News\NewsSite.cs" />
+    <Compile Include="News\NewsSiteBase.cs" />
     <Compile Include="Pictures\Automationsite.cs" />
     <Compile Include="Pictures\JquerySite.cs" />
     <Compile Include="Reports\YoutubeReports.cs" />
     <Compile Include="Reports\FacebookReports.cs" />
-    <Compile Include="News\YcombinatorNews.cs" />
+    <Compile Include="News\YcombinatorNewsTests.cs" />
     <Compile Include="Pictures\Bridgelabz.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

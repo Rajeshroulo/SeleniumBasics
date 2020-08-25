@@ -4,25 +4,23 @@ using OpenQA.Selenium.Chrome;
 
 namespace Seleniumbasicprogram.News
 {
-    public class NewsSite
-   {
+    public class NewsSiteBase
+    {
         public IWebDriver driver;
 
-        [SetUp]
+        [OneTimeSetUp]
         public void Initialize()
         {
             driver = new ChromeDriver();
             driver.Manage().Window.Maximize();
             driver.Navigate().GoToUrl("https://news.ycombinator.com");
 
-        }
+        }        
 
-
-        [TearDown]
+        [OneTimeTearDown]
         public void CloseBrowser()
         {
             driver.Quit();
         }
-
-   }
+    }
 }

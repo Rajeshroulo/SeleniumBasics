@@ -10,9 +10,9 @@ namespace Seleniumbasicprogram.SelectClass
 {
     public class Country
     { 
-      public IWebDriver driver;
+        public IWebDriver driver;
 
-        [SetUp]
+        [OneTimeSetUp]
         public void InitializeBrowser()
         {
             driver = new ChromeDriver();
@@ -20,12 +20,11 @@ namespace Seleniumbasicprogram.SelectClass
             driver.Url = "http://uitestpractice.com/Students/Select";
         }
 
-        [Test]
+        [Test,Order(1)]
         public void SelectDropdownElements()
         {
             IWebElement dropdown = driver.FindElement(By.Id("countriesMultiple"));
             SelectElement element = new SelectElement(dropdown);
-
             IList<IWebElement> elements = element.Options;
             Console.WriteLine(elements.Count);
             foreach (var item in elements)
@@ -34,40 +33,32 @@ namespace Seleniumbasicprogram.SelectClass
             }
         }
 
-        [Test]
+        [Test,Order(2)]
         public void SelectDropdownType() 
         {
             IWebElement dropdown = driver.FindElement(By.Id("countriesMultiple"));
             SelectElement element = new SelectElement(dropdown);
-
             bool isMultiple = element.IsMultiple;
             Console.WriteLine(isMultiple);
-
         }
         
-        [Test]
+        [Test,Order(3)]
         public void SelectDropdownValue()
         {
             IWebElement dropdown = driver.FindElement(By.Id("countriesMultiple"));
             SelectElement element = new SelectElement(dropdown);
             element.SelectByText("India");
-
             Thread.Sleep(2000);
-
             element.SelectByIndex(1);
             Thread.Sleep(2000);
-
             element.DeselectAll();
             Thread.Sleep(2000);
-
         }
 
-        [TearDown]
+        [OneTimeTearDown]
         public void CloseBrowser()
         {
             driver.Quit();
-
         }
-
     }
 }

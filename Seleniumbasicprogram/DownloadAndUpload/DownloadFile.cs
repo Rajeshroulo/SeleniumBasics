@@ -28,19 +28,14 @@ namespace Seleniumbasicprogram.DownloadAndUpload
         {
             String expectedFilePath = @"C:\Users\HP\Downloads\images.png";
             bool fileExists = false;
-
             options.AddUserProfilePreference("download.default_directory", @"C:\Users\HP\Downloads\images.png");
-
             driver.FindElement(By.XPath("//button/a")).Click();
             try
             {
                 WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
                 wait.Until<bool>(x => fileExists = File.Exists(expectedFilePath));
-
                 FileInfo info = new FileInfo(expectedFilePath);
-
                 Assert.AreEqual("images.png", info.Name);
-
             }
             catch(Exception e)
             {
@@ -51,7 +46,6 @@ namespace Seleniumbasicprogram.DownloadAndUpload
                 if (File.Exists(expectedFilePath))
                     File.Delete(expectedFilePath);
             }
-
         }
 
         [Test]
@@ -62,9 +56,7 @@ namespace Seleniumbasicprogram.DownloadAndUpload
 
             Thread.Sleep(5000);
         }
-
         
-
         [TearDown]
         public void CloseBrowser()
         {

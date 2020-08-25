@@ -17,25 +17,20 @@ namespace Seleniumbasicprogram.ActionClass
             driver.Url = "http://uitestpractice.com/Students/Actions";
             driver.Manage().Window.Maximize();
             actions = new Actions(driver);
-
-
         }
 
         [Test,Order(1)]
         public void MoveElement()
         {
             actions.MoveToElement(driver.FindElement(By.Id("div2")), 20, 20, MoveToElementOffsetOrigin.Center)
-                .ContextClick()
-                .Build()
-                .Perform();           
+            .ContextClick().Build().Perform();
         }
 
         [Test,Order(2)]
         public void DragandDrop()
         {
             actions.DragAndDrop(driver.FindElement(By.Id("draggable")), driver.FindElement(By.Id("droppable")))
-            .Build()
-            .Perform();
+            .Build().Perform();
         }
 
         [Test,Order(3)]
@@ -43,9 +38,7 @@ namespace Seleniumbasicprogram.ActionClass
         {
            // actions.Click(driver.FindElement(By.Name("click")))
             actions.MoveToElement(driver.FindElement(By.Name("click")))
-            .Click()
-            .Build()
-            .Perform();
+            .Click().Build().Perform();
         }
 
         [Test,Order(4)]
@@ -53,21 +46,16 @@ namespace Seleniumbasicprogram.ActionClass
         {
             //actions.DoubleClick(driver.FindElement(By.Name("dblClick")))
             actions.MoveToElement(driver.FindElement(By.Name("dblClick")))
-            .DoubleClick()
-            .Build()
-            .Perform();
+            .DoubleClick().Build().Perform();
         }
 
         [Test,Order(5)]
         public void ActionClickAndHold()
         {
-          // actions.ClickAndHold(driver.FindElement(By.Name("one")))
+          // actions.ClickAndHold(driver.FindElement(By.Name("one")))    // with Parameters
            // .Release(driver.FindElement(By.Name("twelve")))
-            actions.MoveToElement(driver.FindElement(By.Name("one")))
-            .ClickAndHold()
-            .Release()
-            .Build()
-            .Perform();
+            actions.MoveToElement(driver.FindElement(By.Name("one")))    // without Parameters
+            .ClickAndHold().Release().Build().Perform();
             Thread.Sleep(2000);
         }
 
@@ -76,6 +64,5 @@ namespace Seleniumbasicprogram.ActionClass
         {
             driver.Quit();
         }
-
     }
 }

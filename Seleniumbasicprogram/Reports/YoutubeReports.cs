@@ -1,10 +1,10 @@
 ﻿using OpenQA.Selenium;
+using TestAttribute = NUnit.Framework.TestAttribute;
 using log4net;
 using NUnit.Framework;
 using OpenQA.Selenium.Chrome;
 using AventStack.ExtentReports.Model;
 using AventStack.ExtentReports;
-using TestAttribute = NUnit.Framework.TestAttribute;
 using System.Threading;
 
 namespace Seleniumbasicprogram.Reports
@@ -12,8 +12,7 @@ namespace Seleniumbasicprogram.Reports
     public class YoutubeReports
     {
        public IWebDriver driver;
-
-        ILog logger = LogManager.GetLogger(typeof(Program));
+       ILog logger = LogManager.GetLogger(typeof(Program));
 
         [SetUp]
         public void Initialize()
@@ -40,6 +39,5 @@ namespace Seleniumbasicprogram.Reports
             driver.Quit();
             logger.Info("Exit the browser");
         }
-
     }
 }

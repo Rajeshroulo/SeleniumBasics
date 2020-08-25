@@ -9,15 +9,14 @@ namespace Seleniumbasicprogram.Pictures
    public class Bridgelabz
    {
        public IWebDriver driver;
+
        [SetUp]      
       public void InitializeBrowser()
       {
             driver = new ChromeDriver();
             driver.Manage().Window.Maximize();
-
       }
-      
-        
+              
       [Test,Author("Rajesh","rajraval017@gmail.com")]
       [Description("Take screenshot")]
       public void Screenshot()
@@ -36,8 +35,7 @@ namespace Seleniumbasicprogram.Pictures
             {
                 driver.Url = url;
                 driver.FindElement(By.Id("email")).SendKeys("9736373828");
-            }
-                
+            }                
             catch(Exception e)
             {
                 ITakesScreenshot sc = driver as ITakesScreenshot;
@@ -46,7 +44,6 @@ namespace Seleniumbasicprogram.Pictures
                 Console.WriteLine(e.StackTrace);
                 throw;
             }
-
       }
 
        public static IList Datalinks()
@@ -54,7 +51,6 @@ namespace Seleniumbasicprogram.Pictures
             ArrayList list = new ArrayList();
             list.Add("https://www.facebook.com");
             return list;
-
        }
 
        [TearDown]
@@ -62,6 +58,5 @@ namespace Seleniumbasicprogram.Pictures
        {
             driver.Quit();
        }
-
-    }
+   }
 }
