@@ -14,7 +14,6 @@ namespace Seleniumbasicprogram.News
             driver = new ChromeDriver();
             driver.Manage().Window.Maximize();
             driver.Navigate().GoToUrl("https://news.ycombinator.com");
-
         }        
 
         [OneTimeTearDown]

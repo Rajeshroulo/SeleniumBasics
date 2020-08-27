@@ -5,7 +5,7 @@ using System;
 
 namespace Seleniumbasicprogram.Pictures
 {
-    public class JquerySite
+    public class Jquery
     {
         public IWebDriver driver;
         [SetUp]

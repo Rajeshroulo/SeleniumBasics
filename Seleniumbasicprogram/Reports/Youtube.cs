@@ -9,7 +9,7 @@ using System.Threading;
 
 namespace Seleniumbasicprogram.Reports
 {
-    public class YoutubeReports
+    public class Youtube
     {
        public IWebDriver driver;
        ILog logger = LogManager.GetLogger(typeof(Program));

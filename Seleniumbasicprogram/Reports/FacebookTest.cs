@@ -7,7 +7,7 @@ using System;
 
 namespace Seleniumbasicprogram
 {
-    public class FacebookReports
+    public class FacebookTest
     {
         ExtentReports extent = null;
         [OneTimeSetUp]

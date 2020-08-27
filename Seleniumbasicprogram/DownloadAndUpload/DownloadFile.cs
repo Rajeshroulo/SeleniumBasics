@@ -20,7 +20,6 @@ namespace Seleniumbasicprogram.DownloadAndUpload
             driver = new ChromeDriver(options);
             options.AddArguments("start-maximized");
             driver.Url = "http://uitestpractice.com/Students/Widgets";
-
         }
 
         [Test]
@@ -51,9 +50,8 @@ namespace Seleniumbasicprogram.DownloadAndUpload
         [Test]
         public void VerifyUpload()
         {
-             driver.FindElement(By.Id("image_file")).SendKeys(@"C:\Users\HP\Downloads\Honeywell.jpg");
+            driver.FindElement(By.Id("image_file")).SendKeys(@"C:\Users\HP\Downloads\Honeywell.jpg");
             driver.FindElement(By.XPath("//input[@type = 'button']")).Click();
-
             Thread.Sleep(5000);
         }
         

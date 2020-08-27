@@ -5,7 +5,7 @@ using System.Threading;
 
 namespace Seleniumbasicprogram.Pictures
 {
-    public class Automationsite
+    public class Automation
     {
         public IWebDriver driver;
 
