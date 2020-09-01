@@ -32,7 +32,6 @@ C:\Users\HP\source\repos\Seleniumbasicprogram\Seleniumbasicprogram\bin\Debug\Raz
 C:\Users\HP\source\repos\Seleniumbasicprogram\Seleniumbasicprogram\bin\Debug\System.Web.Razor.xml
 C:\Users\HP\source\repos\Seleniumbasicprogram\Seleniumbasicprogram\bin\Debug\WebDriver.xml
 C:\Users\HP\source\repos\Seleniumbasicprogram\Seleniumbasicprogram\bin\Debug\WebDriver.Support.xml
-C:\Users\HP\source\repos\Seleniumbasicprogram\Seleniumbasicprogram\obj\Debug\SeleniumBasicProgram.csprojAssemblyReference.cache
 C:\Users\HP\source\repos\Seleniumbasicprogram\Seleniumbasicprogram\obj\Debug\SeleniumBasicProgram.csproj.CoreCompileInputs.cache
 C:\Users\HP\source\repos\Seleniumbasicprogram\Seleniumbasicprogram\obj\Debug\SeleniumBasicProgram.csproj.CopyComplete
 C:\Users\HP\source\repos\Seleniumbasicprogram\Seleniumbasicprogram\obj\Debug\Seleniumbasicprogram.exe
