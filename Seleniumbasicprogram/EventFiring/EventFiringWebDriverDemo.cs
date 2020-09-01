@@ -35,6 +35,10 @@ namespace Seleniumbasicprogram.EventFiring
 
             eventFiringWebDriver.NavigatingBack += EventFiringWebDriver_NavigatingBack;
             eventFiringWebDriver.NavigatedBack += EventFiringWebDriver_NavigatedBack;
+
+            //Script execution events
+            eventFiringWebDriver.ScriptExecuting += EventFiringWebDriver_ScriptExecuting;
+            eventFiringWebDriver.ScriptExecuted += EventFiringWebDriver_ScriptExecuted; 
             
             driver = eventFiringWebDriver;
 
@@ -49,7 +53,21 @@ namespace Seleniumbasicprogram.EventFiring
             driver.Navigate().Back();
             driver.Navigate().Forward();
 
+            //Script execution events
+            ((IJavaScriptExecutor)driver).ExecuteScript("alert('Javascript executing')");
+            driver.SwitchTo().Alert().Accept();
+
             driver.Quit();
+        }
+
+        private void EventFiringWebDriver_ScriptExecuted(object sender, WebDriverScriptEventArgs e)
+        {
+            Console.WriteLine("Script Executed");
+        }
+
+        private void EventFiringWebDriver_ScriptExecuting(object sender, WebDriverScriptEventArgs e)
+        {
+            Console.WriteLine("Script Executing");
         }
 
         private void EventFiringWebDriver_NavigatedBack(object sender, WebDriverNavigationEventArgs e)
