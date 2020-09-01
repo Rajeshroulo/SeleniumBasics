@@ -36,3 +36,4 @@ C:\Users\HP\source\repos\Seleniumbasicprogram\Seleniumbasicprogram\obj\Debug\Sel
 C:\Users\HP\source\repos\Seleniumbasicprogram\Seleniumbasicprogram\obj\Debug\SeleniumBasicProgram.csproj.CopyComplete
 C:\Users\HP\source\repos\Seleniumbasicprogram\Seleniumbasicprogram\obj\Debug\Seleniumbasicprogram.exe
 C:\Users\HP\source\repos\Seleniumbasicprogram\Seleniumbasicprogram\obj\Debug\Seleniumbasicprogram.pdb
+C:\Users\HP\source\repos\Seleniumbasicprogram\Seleniumbasicprogram\obj\Debug\SeleniumBasicProgram.csprojAssemblyReference.cache
