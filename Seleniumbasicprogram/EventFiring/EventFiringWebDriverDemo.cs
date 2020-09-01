@@ -3,6 +3,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.Events;
 using System;
+using System.Threading;
 
 namespace Seleniumbasicprogram.EventFiring
 {
@@ -38,7 +39,10 @@ namespace Seleniumbasicprogram.EventFiring
 
             //Script execution events
             eventFiringWebDriver.ScriptExecuting += EventFiringWebDriver_ScriptExecuting;
-            eventFiringWebDriver.ScriptExecuted += EventFiringWebDriver_ScriptExecuted; 
+            eventFiringWebDriver.ScriptExecuted += EventFiringWebDriver_ScriptExecuted;
+
+            //Exception thrown events
+            eventFiringWebDriver.ExceptionThrown += EventFiringWebDriver_ExceptionThrown;
             
             driver = eventFiringWebDriver;
 
@@ -57,7 +61,15 @@ namespace Seleniumbasicprogram.EventFiring
             ((IJavaScriptExecutor)driver).ExecuteScript("alert('Javascript executing')");
             driver.SwitchTo().Alert().Accept();
 
+            //Exception thrown events
+            driver.FindElement(By.Id("Raj")).Click();
+
             driver.Quit();
+        }
+
+        private void EventFiringWebDriver_ExceptionThrown(object sender, WebDriverExceptionEventArgs e)
+        {
+            Console.WriteLine("Exception Thrown");
         }
 
         private void EventFiringWebDriver_ScriptExecuted(object sender, WebDriverScriptEventArgs e)
